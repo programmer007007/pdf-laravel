@@ -1,5 +1,5 @@
 {
-    "name": "andrew/pdf-filler-laravel",
+    "name": "strongbond/pdf-filler-laravel",
     "version": "1.0.0",
     "description": "Using this pdf filler we can fill forms as well as add signature",
     "require": {
@@ -12,7 +12,7 @@
     },
     "authors": [
         {
-            "name": "programmer007007",
+            "name": "Prince Johnson",
             "email": "andprogrammer007@gmail.com"
         }
     ],
