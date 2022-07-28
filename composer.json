@@ -1,0 +1,26 @@
+{
+    "name": "andrew/pdf-filler-laravel",
+    "version": "1.0.0",
+    "description": "Using this pdf filler we can fill forms as well as add signature",
+    "require": {
+        "mikehaertl/php-pdftk": "0.10.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Andrew\\PdfFillerLaravel\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "programmer007007",
+            "email": "andprogrammer007@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Andrew\\PdfFillerLaravel\\PdfFillerLaravelServiceProvider"
+            ]
+        }
+    }
+}
