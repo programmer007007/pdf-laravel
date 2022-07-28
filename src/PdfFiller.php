@@ -28,42 +28,6 @@ class PdfFiller
 
     private function init($dataToFill, $pdfFile, $outputFileName)
     {
-        // Paste these 3 commands
-        // sudo apt-get install imagemagick
-        // sudo apt-get install pdftk
-        // sudo apt-get install poppler-utils
-
-        // comment the below line on /etc/ImageMagick-6/policy.xml
-
-        //  <policy domain="coder" rights="none" pattern="PS" />
-        //  <policy domain="coder" rights="none" pattern="PS2" />
-        //  <policy domain="coder" rights="none" pattern="PS3" />
-        //  <policy domain="coder" rights="none" pattern="EPS" />
-        //  <policy domain="coder" rights="none" pattern="PDF" />
-        //  <policy domain="coder" rights="none" pattern="XPS" />
-
-        //composer require mikehaertl/php-pdftk
-
-        // Route for testing
-        // Paste then uncomment in web.php
-        //Testing code
-        //\Illuminate\Support\Facades\Route::get("/test",function(\Laravel\Lumen\Http\Request $request){
-        //    // For getting the field names inside pdf
-        ////    $t = new \App\Http\Integration\PdfFiller([],"ok.pdf","done.pdf");
-        ////    print_r($t->getAllFieldDetails());
-        ////    die();
-        //    //#
-        //    $t = new \App\Http\Integration\PdfFiller(['First Name'=>'John', 'License Period' =>'2 Years',
-        //        'signatures'=>[
-        //            ['image_loc'=>'craft/signature/craft_1627880159.jpeg',"bottom"=>350,"left"=>200],
-        //            ['image_base_64'=>'data:image/jpeg;base64,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
-        //',"bottom"=>50,"left"=>200]
-        //            ]],"ok.pdf","done.pdf");
-        //    $demo = $t->fill();
-        // $tmplink = explode('public',$demo);
-        //   echo "<a href='".end($tmplink)."'>download</a>";
-        //});
-
         $tmp_rnd_folder_name = $this->generateRandomString(5);
         $this->pdfTmpFolders = base_path("$this->pdfFolders/tmp/$tmp_rnd_folder_name");
         $this->pdfMainFolders = base_path("$this->pdfFolders/pdata");
@@ -85,11 +49,10 @@ class PdfFiller
 
     /**
      * Get the filed list name specified in the pdf file.
-     * Can be called via Eg : new \App\Http\Integration\PdfFiller([],"pdf_file_name.pdf","");
      * @return bool|\mikehaertl\pdftk\DataFields
      * @throws Exception
      */
-    private function getAllFieldDetails()
+    public function getAllFieldDetails()
     {
         $pdf = new Pdf($this->pdfFile);
         $data = $pdf->getDataFields();
