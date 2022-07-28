@@ -47,19 +47,24 @@ class PdfFiller
         $this->dataToFill = $dataToFill;
     }
 
-    /**
+   /**
      * Get the filed list name specified in the pdf file.
+     * @param $pdf_file_name string|null FileName of the pdf file | will search in the folder provided in config/pdffiller.php | if you cam't find one publish it.
      * @return bool|\mikehaertl\pdftk\DataFields
      * @throws Exception
      */
-    public function getAllFieldDetails()
+    public function getAllFieldDetails($pdf_file_name)
     {
-        $pdf = new Pdf($this->pdfFile);
-        $data = $pdf->getDataFields();
-        if ($data === false) {
-            throw new Exception($pdf->getError());
+        if($pdf_file_name) {
+            $pdf = new Pdf($pdf_file_name);
+            $data = $pdf->getDataFields();
+            if ($data === false) {
+                throw new Exception($pdf->getError());
+            }
+            return $data;
+        }else{
+            throw new Exception("Pdf file not found.");
         }
-        return $data;
     }
 
     /**
