@@ -35,9 +35,6 @@ comment the below line on /etc/ImageMagick-6/policy.xml
  
  The program bascially creates a sub folder [pdata] and keep all the modified pdf in that folder.
  
- Eg: say i have a pdf doctor_melvin.pdf inside the folder public/andrew-pdf/doctor_melvin.pdf then the output data will be created in public/andrew-pdf/pdata/doctor_melvin_filled.pdf 
- 
- 
  
 
 # How to use ?
