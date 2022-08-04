@@ -32,7 +32,7 @@ comment the below line on /etc/ImageMagick-6/policy.xml
  
  This will create a config file[pdffiller.pdf] in config folder.
  
- Keep all the pdf to be filled inside the config folder that you have specified. Cause the program will search in that folder for the pdf file that you will supply in the function.
+ Keep all the pdf to be filled inside the folder that you have specified in the config file. Cause the program will search in that folder for the pdf file that you will supply in the function.
  
  The program bascially creates a sub folder [pdata] and keep all the modified pdf in that folder.
  
